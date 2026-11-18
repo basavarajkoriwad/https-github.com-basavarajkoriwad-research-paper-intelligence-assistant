@@ -1,6 +1,18 @@
 # ScholarMind AI — Research Paper Intelligence Assistant
 
+[![CI](https://github.com/basavarajkoriwad/https-github.com-basavarajkoriwad-research-paper-intelligence-assistant/actions/workflows/ci.yml/badge.svg)](https://github.com/basavarajkoriwad/https-github.com-basavarajkoriwad-research-paper-intelligence-assistant/actions/workflows/ci.yml)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=basavarajkoriwad/https-github.com-basavarajkoriwad-research-paper-intelligence-assistant&branch=main&mainModule=streamlit_app.py)
+[![Python 3.10-3.12](https://img.shields.io/badge/Python-3.10--3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Docker Ready](https://img.shields.io/badge/Docker-CPU%20Ready-2496ED?logo=docker&logoColor=white)](Dockerfile)
+
 > An end-to-end, CPU-compatible, evidence-grounded **AI Research Paper Intelligence Assistant** combining custom **PyTorch Deep Learning** (RNN, LSTM, BiLSTM+Attention), fine-tuned **Transformers** (`SciBERT`, `Flan-T5`), cached **Sentence Transformer** embeddings (`all-MiniLM-L6-v2`), persistent **FAISS + BM25 Hybrid Retrieval**, grounded **RAG Question Answering**, **FastAPI**, and a 10-section **Streamlit Research Workbench**.
+
+### Quick Links
+- **Launch / Deploy Live Web App (1-Click Streamlit Cloud):** [Open in Streamlit Cloud](https://share.streamlit.io/deploy?repository=basavarajkoriwad/https-github.com-basavarajkoriwad-research-paper-intelligence-assistant&branch=main&mainModule=streamlit_app.py)
+- **GitHub Repository:** https://github.com/basavarajkoriwad/https-github.com-basavarajkoriwad-research-paper-intelligence-assistant
+- **CI/CD Pipelines (Passing):** [GitHub Actions](https://github.com/basavarajkoriwad/https-github.com-basavarajkoriwad-research-paper-intelligence-assistant/actions)
+- **Cloud Production Deployment Guide:** [Microsoft Azure Container Apps Guide](docs/AZURE_DEPLOYMENT.md)
+- **Complete Technical Audit:** [Project Audit Report](docs/PROJECT_AUDIT.md)
 
 ![ScholarMind AI Empirical Results Overview](docs/screenshots/benchmarks_overview.png)
 
@@ -126,8 +138,8 @@ All four reference corpora use manageable, streaming/scalable subsets (`mini`, `
 
 ### Step 1: Clone & Create Virtual Environment
 ```bash
-git clone <your-repo-url>
-cd research-paper-intelligence-assistant
+git clone https://github.com/basavarajkoriwad/https-github.com-basavarajkoriwad-research-paper-intelligence-assistant.git
+cd https-github.com-basavarajkoriwad-research-paper-intelligence-assistant
 
 # Using standard venv + pip (CPU-optimized PyTorch wheel):
 python -m venv .venv
