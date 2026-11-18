@@ -1,0 +1,87 @@
+# Shared ScholarMind AI Base Configuration
+project:
+  name: "ScholarMind AI"
+  version: "0.1.0"
+  seed: 42
+
+paths:
+  data_dir: "data"
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  reports_dir: "data/reports"
+  artifacts_dir: "artifacts"
+
+datasets:
+  # Default scale: mini | small | medium | full
+  # Keeps initial downloads lightweight while allowing seamless scaling
+  default_scale: "small"
+  scales:
+    mini:
+      arxiv_max_records: 500
+      squad_v2_train: 500
+      squad_v2_val: 200
+      arxiv_summ_train: 100
+      arxiv_summ_val: 30
+      arxiv_summ_test: 30
+      sciq_train: 500
+      sciq_val: 100
+      sciq_test: 100
+    small:
+      arxiv_max_records: 5000
+      squad_v2_train: 3000
+      squad_v2_val: 800
+      arxiv_summ_train: 500
+      arxiv_summ_val: 100
+      arxiv_summ_test: 100
+      sciq_train: 2000
+      sciq_val: 500
+      sciq_test: 500
+    medium:
+      arxiv_max_records: 50000
+      squad_v2_train: 25000
+      squad_v2_val: 5000
+      arxiv_summ_train: 5000
+      arxiv_summ_val: 500
+      arxiv_summ_test: 500
+      sciq_train: 11679
+      sciq_val: 1000
+      sciq_test: 1000
+    full:
+      arxiv_max_records: 200000
+      squad_v2_train: null
+      squad_v2_val: null
+      arxiv_summ_train: null
+      arxiv_summ_val: null
+      arxiv_summ_test: null
+      sciq_train: null
+      sciq_val: null
+      sciq_test: null
+
+  arxiv:
+    kaggle_url: "https://www.kaggle.com/datasets/Cornell-University/arxiv"
+    manual_json_path: "data/raw/arxiv/arxiv-metadata-oai-snapshot.json"
+    target_categories:
+      - "cs.AI"
+      - "cs.CL"
+      - "cs.LG"
+      - "cs.CV"
+      - "cs.IR"
+      - "cs.NE"
+      - "stat.ML"
+      - "cs.RO"
+
+  splits:
+    train_ratio: 0.80
+    val_ratio: 0.10
+    test_ratio: 0.10
+
+nlp:
+  spacy_model: "en_core_web_sm"
+  preserve_negations: true
+  chunking:
+    strategy: "hierarchical_section"
+    max_tokens: 384
+    min_tokens: 64
+    overlap_sentences: 2
+    parent_max_tokens: 1500
+    include_breadcrumb: true

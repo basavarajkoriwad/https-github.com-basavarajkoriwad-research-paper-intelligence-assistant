@@ -1,0 +1,61 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: scholarmind-ai:latest
+    container_name: scholarmind-api
+    environment:
+      APP_MODE: "api"
+      SCHOLARMIND_ENV: "production"
+      SCHOLARMIND_PROFILE: "production"
+      SCHOLARMIND_HOST: "0.0.0.0"
+      SCHOLARMIND_PORT: "8000"
+      SCHOLARMIND_CORS_ORIGINS: "http://localhost:8501,http://127.0.0.1:8501"
+      SCHOLARMIND_LLM_PROVIDER: "${SCHOLARMIND_LLM_PROVIDER:-local}"
+      SCHOLARMIND_DATA_DIR: "/app/data"
+      SCHOLARMIND_ARTIFACTS_DIR: "/app/artifacts"
+      HF_HOME: "/app/artifacts/hf_cache"
+      HF_TOKEN: "${HF_TOKEN:-}"
+    ports:
+      - "8000:8000"
+    volumes:
+      - scholarmind_data:/app/data/store
+      - scholarmind_hf_cache:/app/artifacts/hf_cache
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8000/health"]
+      interval: 20s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+  ui:
+    image: scholarmind-ai:latest
+    container_name: scholarmind-ui
+    depends_on:
+      api:
+        condition: service_healthy
+    environment:
+      APP_MODE: "ui"
+      SCHOLARMIND_ENV: "production"
+      SCHOLARMIND_PROFILE: "production"
+      SCHOLARMIND_HOST: "0.0.0.0"
+      SCHOLARMIND_UI_PORT: "8501"
+      # Uses Docker internal DNS service name (zero localhost dependency!)
+      SCHOLARMIND_API_URL: "http://api:8000"
+      SCHOLARMIND_DATA_DIR: "/app/data"
+      SCHOLARMIND_ARTIFACTS_DIR: "/app/artifacts"
+    ports:
+      - "8501:8501"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8501/_stcore/health"]
+      interval: 20s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  scholarmind_data:
+  scholarmind_hf_cache:

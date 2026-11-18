@@ -1,0 +1,140 @@
+{
+  "experiment": "Experiment C: Pretrained BERT (SciBERT) Representations & Fine-Tuning",
+  "dataset": "arxiv_metadata",
+  "seed": 42,
+  "contextual_embedding_probe": {
+    "model_name": "allenai/scibert_scivocab_uncased",
+    "probes": [
+      {
+        "target_word": "kernel",
+        "same_domain_cosine_sim": 0.7784,
+        "cross_domain_cosine_sim": 0.6362,
+        "contextual_shift_gap": 0.1422
+      },
+      {
+        "target_word": "attention",
+        "same_domain_cosine_sim": 0.8911,
+        "cross_domain_cosine_sim": 0.7667,
+        "contextual_shift_gap": 0.1243
+      }
+    ]
+  },
+  "scibert_finetune": {
+    "model_name": "allenai/scibert_scivocab_uncased",
+    "device": "cpu",
+    "total_parameters": 109926152,
+    "trainable_parameters": 14774024,
+    "unfreeze_last_n_layers": 2,
+    "train_seconds": 886.84,
+    "best_epoch": 4,
+    "checkpoint_path": "artifacts/checkpoints/exp_c_bert/best_model.pt",
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 2.0429,
+        "val_loss": 1.7148,
+        "val_accuracy": 0.4762,
+        "val_macro_f1": 0.4991
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.5462,
+        "val_loss": 1.2307,
+        "val_accuracy": 0.5952,
+        "val_macro_f1": 0.5763
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.0971,
+        "val_loss": 0.9891,
+        "val_accuracy": 0.6667,
+        "val_macro_f1": 0.6475
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.8572,
+        "val_loss": 0.9066,
+        "val_accuracy": 0.7143,
+        "val_macro_f1": 0.6913
+      }
+    ],
+    "best_val": {
+      "loss": 0.9066,
+      "accuracy": 0.7143,
+      "macro_f1": 0.6913,
+      "weighted_f1": 0.6987,
+      "inference_ms_per_sample": 351.134
+    },
+    "test": {
+      "loss": 1.1346,
+      "accuracy": 0.5714,
+      "macro_f1": 0.5498,
+      "weighted_f1": 0.5597,
+      "inference_ms_per_sample": 363.015
+    },
+    "per_class_test_report": {
+      "cs.AI": {
+        "precision": 0.25,
+        "recall": 0.2,
+        "f1-score": 0.2222222222222222,
+        "support": 5.0
+      },
+      "cs.CL": {
+        "precision": 0.2,
+        "recall": 0.25,
+        "f1-score": 0.2222222222222222,
+        "support": 4.0
+      },
+      "cs.CV": {
+        "precision": 0.8571428571428571,
+        "recall": 0.8571428571428571,
+        "f1-score": 0.8571428571428571,
+        "support": 7.0
+      },
+      "cs.IR": {
+        "precision": 0.5714285714285714,
+        "recall": 0.8,
+        "f1-score": 0.6666666666666666,
+        "support": 5.0
+      },
+      "cs.LG": {
+        "precision": 0.6666666666666666,
+        "recall": 0.25,
+        "f1-score": 0.36363636363636365,
+        "support": 8.0
+      },
+      "cs.NE": {
+        "precision": 0.3333333333333333,
+        "recall": 0.5,
+        "f1-score": 0.4,
+        "support": 4.0
+      },
+      "cs.RO": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 5.0
+      },
+      "stat.ML": {
+        "precision": 0.6,
+        "recall": 0.75,
+        "f1-score": 0.6666666666666666,
+        "support": 4.0
+      },
+      "accuracy": 0.5714285714285714,
+      "macro avg": {
+        "precision": 0.5598214285714286,
+        "recall": 0.5758928571428572,
+        "f1-score": 0.5498196248196248,
+        "support": 42.0
+      },
+      "weighted avg": {
+        "precision": 0.5946145124716553,
+        "recall": 0.5714285714285714,
+        "f1-score": 0.5597402597402598,
+        "support": 42.0
+      }
+    }
+  },
+  "loss_curve_plot": "data/reports/plots/exp_c_bert_curves.png"
+}

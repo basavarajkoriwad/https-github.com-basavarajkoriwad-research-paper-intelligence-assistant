@@ -1,0 +1,18 @@
+# Tier 1: Laptop CPU-Only Profile (16 GB RAM, 0 GB VRAM)
+profile: "cpu_lite"
+hardware:
+  preferred_device: "cpu"
+  precision: "fp32"
+  quantization: "int8"
+  num_workers: 2
+  batch_size: 16
+
+models:
+  pdf_parser: "pymupdf"
+  embedding: "sentence-transformers/all-MiniLM-L6-v2"
+  reranker: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+  extractive_qa: "deepset/minilm-uncased-squad2"
+  summarizer: "google/flan-t5-small"
+  rag_llm: "google/flan-t5-base"
+  llm_provider: "local"
+  llm_model: "qwen2.5:3b"

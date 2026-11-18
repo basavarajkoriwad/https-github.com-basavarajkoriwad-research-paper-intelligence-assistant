@@ -1,0 +1,17 @@
+# Tier 3: Research GPU Profile (24-80 GB VRAM: RTX 4090 / A100 / L40S)
+profile: "gpu_research"
+hardware:
+  preferred_device: "cuda"
+  precision: "bf16"
+  quantization: "none"
+  num_workers: 8
+  batch_size: 64
+
+models:
+  pdf_parser: "docling"
+  embedding: "BAAI/bge-m3"
+  reranker: "BAAI/bge-reranker-v2-m3"
+  extractive_qa: "microsoft/deberta-v3-large"
+  summarizer: "google/long-t5-tglobal-large"
+  llm_provider: "api"
+  llm_model: "gemini-2.5-pro"

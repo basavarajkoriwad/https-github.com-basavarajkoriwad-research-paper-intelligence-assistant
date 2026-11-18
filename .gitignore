@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Environment & Secrets (NEVER commit credentials!)
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+kaggle.json
+
+# Large Data, Runtime Stores & Model Weights (reproducible via scripts)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/store/
+data/qdrant_db/
+artifacts/hf_cache/
+artifacts/checkpoints/
+artifacts/models/
+artifacts/mlruns/
+
+# OS, IDE & Agent Metadata
+.agents/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

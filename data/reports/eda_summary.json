@@ -1,0 +1,779 @@
+{
+  "arxiv_metadata": {
+    "dataset": "arxiv_metadata",
+    "quality": {
+      "row_count": 404,
+      "column_count": 11,
+      "exact_duplicate_rows": 0,
+      "columns": {
+        "paper_id": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "title": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "abstract": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "authors": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "categories": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "target_categories": {
+          "dtype": "object",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "primary_category": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "num_categories": {
+          "dtype": "int64",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "year": {
+          "dtype": "int64",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "doi": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 404,
+          "missing_pct": 100.0
+        },
+        "journal_ref": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 404,
+          "missing_pct": 100.0
+        }
+      },
+      "normalized_abstract_duplicates": 0
+    },
+    "text_lengths": {
+      "title": {
+        "char_length": {
+          "min": 24.0,
+          "mean": 84.01,
+          "std": 24.2,
+          "p25": 68.75,
+          "p50": 82.0,
+          "p75": 98.25,
+          "p90": 114.0,
+          "p95": 125.0,
+          "p99": 150.7,
+          "max": 192.0
+        },
+        "word_length": {
+          "min": 3.0,
+          "mean": 10.3,
+          "std": 3.24,
+          "p25": 8.0,
+          "p50": 10.0,
+          "p75": 12.0,
+          "p90": 14.0,
+          "p95": 16.0,
+          "p99": 19.97,
+          "max": 23.0
+        },
+        "estimated_subword_tokens": {
+          "min": 4.0,
+          "mean": 13.37,
+          "std": 4.27,
+          "p25": 10.0,
+          "p50": 13.0,
+          "p75": 16.0,
+          "p90": 18.0,
+          "p95": 21.0,
+          "p99": 25.97,
+          "max": 30.0
+        },
+        "pct_gt_512_tokens": 0.0,
+        "pct_gt_4096_tokens": 0.0
+      },
+      "abstract": {
+        "char_length": {
+          "min": 289.0,
+          "mean": 1445.11,
+          "std": 309.15,
+          "p25": 1235.75,
+          "p50": 1452.0,
+          "p75": 1686.25,
+          "p90": 1842.7,
+          "p95": 1902.4,
+          "p99": 1916.97,
+          "max": 1920.0
+        },
+        "word_length": {
+          "min": 39.0,
+          "mean": 199.78,
+          "std": 46.59,
+          "p25": 168.75,
+          "p50": 199.5,
+          "p75": 233.0,
+          "p90": 258.0,
+          "p95": 274.0,
+          "p99": 296.0,
+          "max": 333.0
+        },
+        "estimated_subword_tokens": {
+          "min": 51.0,
+          "mean": 259.72,
+          "std": 60.55,
+          "p25": 219.5,
+          "p50": 259.5,
+          "p75": 303.0,
+          "p90": 335.0,
+          "p95": 356.0,
+          "p99": 385.0,
+          "max": 433.0
+        },
+        "pct_gt_512_tokens": 0.0,
+        "pct_gt_4096_tokens": 0.0
+      }
+    },
+    "distributions": {
+      "primary_category_counts": {
+        "cs.LG": 75,
+        "cs.CV": 67,
+        "cs.AI": 54,
+        "cs.IR": 46,
+        "cs.RO": 46,
+        "cs.CL": 43,
+        "stat.ML": 37,
+        "cs.NE": 36
+      },
+      "avg_categories_per_paper": 2.07,
+      "multi_label_pct": 68.32,
+      "year_range": [
+        2026,
+        2026
+      ],
+      "top_years": {
+        "2026": 404
+      }
+    },
+    "samples": [
+      {
+        "paper_id": "2611.23229",
+        "title": "Ambient LLMs: Data-Efficient Supervised Fine-tuning via Temperature Matching",
+        "abstract": "Collecting large-scale, diverse, and high-quality post-training datasets for autoregressive language models is challenging. Consequently, Supervised Fine-Tuning (SFT) is typically applied to datasets significantly smaller than those used for pre-training, whic...",
+        "authors": "Giannis Daras, Marios Papachristou, Adam Klivans, Antonio Torralba, Constantinos Daskalakis",
+        "categories": "cs.LG cs.AI cs.CL",
+        "target_categories": [
+          "cs.LG",
+          "cs.AI",
+          "cs.CL"
+        ],
+        "primary_category": "cs.LG",
+        "num_categories": 3,
+        "year": 2026,
+        "doi": "",
+        "journal_ref": ""
+      },
+      {
+        "paper_id": "2611.23225",
+        "title": "StringQFT: A Multiuse Textbook Resource for AI-Assisted Theoretical Physics",
+        "abstract": "We present StringQFT as a textbook collection for string constructions of quantum field theory and as infrastructure for AI-assisted theoretical physics. The collection comprises 18 volumes, 190 chapters and 3,795 pages, covering brane probes, brane webs, geom...",
+        "authors": "Xingyang Yu",
+        "categories": "hep-th cs.AI",
+        "target_categories": [
+          "cs.AI"
+        ],
+        "primary_category": "cs.AI",
+        "num_categories": 2,
+        "year": 2026,
+        "doi": "",
+        "journal_ref": ""
+      }
+    ]
+  },
+  "squad_v2": {
+    "dataset": "squad_v2",
+    "split_sizes": {
+      "train": 500,
+      "val": 200
+    },
+    "quality": {
+      "row_count": 700,
+      "column_count": 8,
+      "exact_duplicate_rows": 0,
+      "columns": {
+        "id": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "title": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "context": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "question": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "answer_text": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 229,
+          "missing_pct": 32.71
+        },
+        "answer_start": {
+          "dtype": "int64",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "all_answers": {
+          "dtype": "object",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "is_impossible": {
+          "dtype": "bool",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        }
+      }
+    },
+    "text_lengths": {
+      "context": {
+        "char_length": {
+          "min": 161.0,
+          "mean": 822.01,
+          "std": 362.13,
+          "p25": 592.75,
+          "p50": 754.0,
+          "p75": 954.0,
+          "p90": 1243.3,
+          "p95": 1620.85,
+          "p99": 2085.4,
+          "max": 2414.0
+        },
+        "word_length": {
+          "min": 23.0,
+          "mean": 127.94,
+          "std": 57.36,
+          "p25": 91.0,
+          "p50": 117.0,
+          "p75": 148.25,
+          "p90": 194.1,
+          "p95": 253.2,
+          "p99": 325.01,
+          "max": 402.0
+        },
+        "estimated_subword_tokens": {
+          "min": 30.0,
+          "mean": 166.32,
+          "std": 74.59,
+          "p25": 118.0,
+          "p50": 152.0,
+          "p75": 192.5,
+          "p90": 252.2,
+          "p95": 329.25,
+          "p99": 422.02,
+          "max": 523.0
+        },
+        "pct_gt_512_tokens": 0.29,
+        "pct_gt_4096_tokens": 0.0
+      },
+      "question": {
+        "char_length": {
+          "min": 14.0,
+          "mean": 61.44,
+          "std": 22.17,
+          "p25": 45.0,
+          "p50": 59.0,
+          "p75": 74.0,
+          "p90": 91.0,
+          "p95": 101.0,
+          "p99": 122.03,
+          "max": 183.0
+        },
+        "word_length": {
+          "min": 3.0,
+          "mean": 10.28,
+          "std": 3.72,
+          "p25": 7.0,
+          "p50": 10.0,
+          "p75": 12.0,
+          "p90": 15.0,
+          "p95": 17.0,
+          "p99": 21.01,
+          "max": 31.0
+        },
+        "estimated_subword_tokens": {
+          "min": 4.0,
+          "mean": 13.35,
+          "std": 4.92,
+          "p25": 9.0,
+          "p50": 13.0,
+          "p75": 16.0,
+          "p90": 20.0,
+          "p95": 22.0,
+          "p99": 27.02,
+          "max": 40.0
+        },
+        "pct_gt_512_tokens": 0.0,
+        "pct_gt_4096_tokens": 0.0
+      },
+      "answer_text_answerable_only": {
+        "char_length": {
+          "min": 1.0,
+          "mean": 19.54,
+          "std": 19.73,
+          "p25": 8.0,
+          "p50": 14.0,
+          "p75": 23.0,
+          "p90": 40.0,
+          "p95": 58.0,
+          "p99": 100.0,
+          "max": 147.0
+        },
+        "word_length": {
+          "min": 1.0,
+          "mean": 2.96,
+          "std": 2.9,
+          "p25": 1.0,
+          "p50": 2.0,
+          "p75": 3.0,
+          "p90": 6.0,
+          "p95": 9.0,
+          "p99": 14.9,
+          "max": 23.0
+        },
+        "estimated_subword_tokens": {
+          "min": 1.0,
+          "mean": 3.82,
+          "std": 3.79,
+          "p25": 1.0,
+          "p50": 3.0,
+          "p75": 4.0,
+          "p90": 8.0,
+          "p95": 12.0,
+          "p99": 19.2,
+          "max": 30.0
+        },
+        "pct_gt_512_tokens": 0.0,
+        "pct_gt_4096_tokens": 0.0
+      }
+    },
+    "distributions": {
+      "unanswerable_pct_overall": 32.71,
+      "unanswerable_pct_by_split": {
+        "train": 27.4,
+        "val": 46.0
+      },
+      "unique_titles": 28,
+      "avg_questions_per_title": 25.0
+    },
+    "samples": [
+      {
+        "id": "5ad2c8b1d7d075001a42a20b",
+        "title": "Northwestern_University",
+        "context": "In April 2016, Northwestern announced that it signed on to the Chicago Star Partnership, a City Colleges initiative. Through this partnership, Northwestern is one of 15 Illinois public and private universities that will \"provide scholarships to students who gr...",
+        "question": " Who encouraged local universities to decrease opportunities for students in the public school districts?",
+        "answer_text": "",
+        "answer_start": -1,
+        "all_answers": [],
+        "is_impossible": true
+      },
+      {
+        "id": "5ad2c7f1d7d075001a42a1f1",
+        "title": "Northwestern_University",
+        "context": "Undergraduate tuition for the 2012/13 school year was $61,240; this includes the basic tuition of $43,380, fees (health $200, etc.), room and board of $13,329 (less if commuting), books and supplies $1,842, personal expenses $1,890, transportation cost of $400...",
+        "question": "How much financial aid did Northwestern process for the 2019-2011 academic year?",
+        "answer_text": "",
+        "answer_start": -1,
+        "all_answers": [],
+        "is_impossible": true
+      }
+    ]
+  },
+  "arxiv_summarization": {
+    "dataset": "arxiv_summarization",
+    "split_sizes": {
+      "train": 100,
+      "val": 30,
+      "test": 30
+    },
+    "quality": {
+      "row_count": 160,
+      "column_count": 3,
+      "exact_duplicate_rows": 0,
+      "columns": {
+        "paper_id": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "article": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "abstract": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        }
+      }
+    },
+    "text_lengths": {
+      "article": {
+        "char_length": {
+          "min": 3464.0,
+          "mean": 35425.43,
+          "std": 28182.25,
+          "p25": 19027.0,
+          "p50": 28260.0,
+          "p75": 40893.0,
+          "p90": 64741.1,
+          "p95": 88553.7,
+          "p99": 147431.54,
+          "max": 195748.0
+        },
+        "word_length": {
+          "min": 604.0,
+          "mean": 6244.43,
+          "std": 4748.73,
+          "p25": 3379.5,
+          "p50": 4906.5,
+          "p75": 7294.75,
+          "p90": 12014.4,
+          "p95": 14504.9,
+          "p99": 24144.22,
+          "max": 33095.0
+        },
+        "estimated_subword_tokens": {
+          "min": 785.0,
+          "mean": 8117.74,
+          "std": 6173.37,
+          "p25": 4393.5,
+          "p50": 6378.5,
+          "p75": 9483.0,
+          "p90": 15618.5,
+          "p95": 18856.85,
+          "p99": 31387.75,
+          "max": 43024.0
+        },
+        "pct_gt_512_tokens": 100.0,
+        "pct_gt_4096_tokens": 78.75
+      },
+      "abstract": {
+        "char_length": {
+          "min": 299.0,
+          "mean": 1275.34,
+          "std": 2021.03,
+          "p25": 640.75,
+          "p50": 1000.0,
+          "p75": 1260.5,
+          "p90": 1575.2,
+          "p95": 1994.35,
+          "p99": 13005.32,
+          "max": 18166.0
+        },
+        "word_length": {
+          "min": 50.0,
+          "mean": 215.72,
+          "std": 340.64,
+          "p25": 104.5,
+          "p50": 166.0,
+          "p75": 213.0,
+          "p90": 274.0,
+          "p95": 328.0,
+          "p99": 2253.21,
+          "max": 2961.0
+        },
+        "estimated_subword_tokens": {
+          "min": 65.0,
+          "mean": 280.41,
+          "std": 442.83,
+          "p25": 135.5,
+          "p50": 216.0,
+          "p75": 277.0,
+          "p90": 356.0,
+          "p95": 426.3,
+          "p99": 2929.16,
+          "max": 3849.0
+        },
+        "pct_gt_512_tokens": 4.38,
+        "pct_gt_4096_tokens": 0.0
+      }
+    },
+    "distributions": {
+      "compression_ratio_mean": 39.56,
+      "compression_ratio_median": 33.69,
+      "pct_articles_with_xmath": 99.38,
+      "pct_articles_with_xcite": 83.75,
+      "pct_articles_with_xref": 0.0
+    },
+    "samples": [
+      {
+        "paper_id": "arxiv_summ_train_0",
+        "article": "additive models @xcite provide an important family of models for semiparametric regression or classification . some reasons for the success of additive models are their increased flexibility when compared to linear or generalized linear models and their increa...",
+        "abstract": "additive models play an important role in semiparametric statistics . \n this paper gives learning rates for regularized kernel based methods for additive models . \n these learning rates compare favourably in particular in high dimensions to recent results on o..."
+      },
+      {
+        "paper_id": "arxiv_summ_train_1",
+        "article": "the leptonic decays of a charged pseudoscalar meson @xmath7 are processes of the type @xmath8 , where @xmath9 , @xmath10 , or @xmath11 . because no strong interactions are present in the leptonic final state @xmath12 , such decays provide a clean way to probe ...",
+        "abstract": "we have studied the leptonic decay @xmath0 , via the decay channel @xmath1 , using a sample of tagged @xmath2 decays collected near the @xmath3 peak production energy in @xmath4 collisions with the cleo - c detector . \n we obtain @xmath5 and determine the deca..."
+      }
+    ]
+  },
+  "sciq": {
+    "dataset": "sciq",
+    "split_sizes": {
+      "train": 500,
+      "val": 100,
+      "test": 100
+    },
+    "quality": {
+      "row_count": 700,
+      "column_count": 8,
+      "exact_duplicate_rows": 0,
+      "columns": {
+        "id": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "question": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "correct_answer": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "distractor1": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "distractor2": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "distractor3": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        },
+        "support": {
+          "dtype": "str",
+          "null_count": 0,
+          "empty_or_whitespace_count": 80,
+          "missing_pct": 11.43
+        },
+        "has_support": {
+          "dtype": "bool",
+          "null_count": 0,
+          "empty_or_whitespace_count": 0,
+          "missing_pct": 0.0
+        }
+      }
+    },
+    "text_lengths": {
+      "question": {
+        "char_length": {
+          "min": 26.0,
+          "mean": 78.67,
+          "std": 32.88,
+          "p25": 56.0,
+          "p50": 72.0,
+          "p75": 95.0,
+          "p90": 118.1,
+          "p95": 133.05,
+          "p99": 203.0,
+          "max": 307.0
+        },
+        "word_length": {
+          "min": 4.0,
+          "mean": 13.3,
+          "std": 5.31,
+          "p25": 10.0,
+          "p50": 12.0,
+          "p75": 16.0,
+          "p90": 19.1,
+          "p95": 22.0,
+          "p99": 31.01,
+          "max": 47.0
+        },
+        "estimated_subword_tokens": {
+          "min": 5.0,
+          "mean": 17.3,
+          "std": 6.93,
+          "p25": 13.0,
+          "p50": 16.0,
+          "p75": 21.0,
+          "p90": 25.1,
+          "p95": 29.0,
+          "p99": 40.02,
+          "max": 61.0
+        },
+        "pct_gt_512_tokens": 0.0,
+        "pct_gt_4096_tokens": 0.0
+      },
+      "correct_answer": {
+        "char_length": {
+          "min": 2.0,
+          "mean": 10.82,
+          "std": 5.51,
+          "p25": 7.0,
+          "p50": 10.0,
+          "p75": 13.0,
+          "p90": 19.0,
+          "p95": 22.0,
+          "p99": 27.02,
+          "max": 43.0
+        },
+        "word_length": {
+          "min": 1.0,
+          "mean": 1.47,
+          "std": 0.75,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 2.0,
+          "p90": 2.0,
+          "p95": 3.0,
+          "p99": 4.0,
+          "max": 7.0
+        },
+        "estimated_subword_tokens": {
+          "min": 1.0,
+          "mean": 1.83,
+          "std": 1.21,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 3.0,
+          "p90": 3.0,
+          "p95": 4.0,
+          "p99": 5.0,
+          "max": 9.0
+        },
+        "pct_gt_512_tokens": 0.0,
+        "pct_gt_4096_tokens": 0.0
+      },
+      "support_when_present": {
+        "char_length": {
+          "min": 40.0,
+          "mean": 505.41,
+          "std": 500.62,
+          "p25": 190.75,
+          "p50": 347.0,
+          "p75": 583.5,
+          "p90": 1231.0,
+          "p95": 1648.95,
+          "p99": 2346.53,
+          "max": 3132.0
+        },
+        "word_length": {
+          "min": 5.0,
+          "mean": 82.33,
+          "std": 79.98,
+          "p25": 31.75,
+          "p50": 58.0,
+          "p75": 97.0,
+          "p90": 192.3,
+          "p95": 263.05,
+          "p99": 360.43,
+          "max": 497.0
+        },
+        "estimated_subword_tokens": {
+          "min": 6.0,
+          "mean": 107.04,
+          "std": 103.95,
+          "p25": 41.5,
+          "p50": 75.0,
+          "p75": 126.0,
+          "p90": 250.4,
+          "p95": 342.05,
+          "p99": 468.24,
+          "max": 646.0
+        },
+        "pct_gt_512_tokens": 0.65,
+        "pct_gt_4096_tokens": 0.0
+      }
+    },
+    "distributions": {
+      "has_support_pct": 88.57,
+      "missing_support_count": 80,
+      "unique_support_passages": 618,
+      "avg_correct_answer_words": 1.47,
+      "avg_distractor1_words": 1.44
+    },
+    "samples": [
+      {
+        "id": "sciq_train_00000",
+        "question": "What type of organism is commonly used in preparation of foods such as cheese and yogurt?",
+        "correct_answer": "mesophilic organisms",
+        "distractor1": "protozoa",
+        "distractor2": "gymnosperms",
+        "distractor3": "viruses",
+        "support": "Mesophiles grow best in moderate temperature, typically between 25\u00b0C and 40\u00b0C (77\u00b0F and 104\u00b0F). Mesophiles are often found living in or on the bodies of humans or other animals. The optimal growth temperature of many pathogenic mesophiles is 37\u00b0C (98\u00b0F), the n...",
+        "has_support": true
+      },
+      {
+        "id": "sciq_train_00001",
+        "question": "What phenomenon makes global winds blow northeast to southwest or the reverse in the northern hemisphere and northwest to southeast or the reverse in the southern hemisphere?",
+        "correct_answer": "coriolis effect",
+        "distractor1": "muon effect",
+        "distractor2": "centrifugal effect",
+        "distractor3": "tropical effect",
+        "support": "Without Coriolis Effect the global winds would blow north to south or south to north. But Coriolis makes them blow northeast to southwest or the reverse in the Northern Hemisphere. The winds blow northwest to southeast or the reverse in the southern hemisphere...",
+        "has_support": true
+      }
+    ]
+  }
+}

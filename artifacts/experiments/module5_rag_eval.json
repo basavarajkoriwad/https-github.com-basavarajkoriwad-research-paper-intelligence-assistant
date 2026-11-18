@@ -1,0 +1,120 @@
+{
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "llm_backend": "local-pytorch:google/flan-t5-base",
+  "top_k": 4,
+  "num_documents": 2,
+  "num_answerable_queries": 7,
+  "num_unanswerable_queries": 2,
+  "retrieval_metrics": {
+    "precision_at_4": 0.4286,
+    "recall_at_4": 1.0,
+    "mrr": 0.9286
+  },
+  "answer_quality_metrics": {
+    "answer_token_f1": 0.7535,
+    "key_term_coverage": 0.8095,
+    "evidence_relevance": 1.0,
+    "citation_correctness": 1.0,
+    "unsupported_answer_rate": 0.0
+  },
+  "performance_metrics_ms": {
+    "avg_doc_processing_ms": 15.35,
+    "avg_cold_embedding_and_index_ms": 2978.04,
+    "avg_cached_reupload_ms": 4.86,
+    "avg_retrieval_latency_ms": 16.13,
+    "avg_answer_generation_latency_ms": 2249.56
+  },
+  "per_case_results": [
+    {
+      "question": "What is the main objective of the SciLongFormer research paper?",
+      "is_answerable": true,
+      "abstained": false,
+      "retrieval_status": "weak_evidence",
+      "max_similarity_score": 0.4604,
+      "citation_correct": true,
+      "answer_token_f1": 0.6923,
+      "key_term_recall": 0.6667,
+      "generated_answer": "preserve methodological accuracy while reducing quadratic self-attention memory overhead"
+    },
+    {
+      "question": "Which datasets and evaluation metrics were used to evaluate SciLongFormer?",
+      "is_answerable": true,
+      "abstained": false,
+      "retrieval_status": "moderate_evidence",
+      "max_similarity_score": 0.6131,
+      "citation_correct": true,
+      "answer_token_f1": 0.4211,
+      "key_term_recall": 0.6667,
+      "generated_answer": "ArXiv Summarization and PubMed"
+    },
+    {
+      "question": "Why did the authors select a hybrid local-global Transformer architecture in SciLongFormer?",
+      "is_answerable": true,
+      "abstained": false,
+      "retrieval_status": "moderate_evidence",
+      "max_similarity_score": 0.486,
+      "citation_correct": true,
+      "answer_token_f1": 0.8421,
+      "key_term_recall": 1.0,
+      "generated_answer": "because standard RNNs and LSTMs suffer from vanishing gradients across long sequences while dense BERT models truncate at 512 tokens"
+    },
+    {
+      "question": "What were the experimental findings of SciLongFormer on ArXiv Summarization?",
+      "is_answerable": true,
+      "abstained": false,
+      "retrieval_status": "strong_evidence",
+      "max_similarity_score": 0.7776,
+      "citation_correct": true,
+      "answer_token_f1": 0.7636,
+      "key_term_recall": 1.0,
+      "generated_answer": "SciLongFormer achieves 46.8 ROUGE-1 and 20.4 RoughE-2 on ArXiv Summarization, outperforming traditional BiLSTM baselines by 9.2 ROUGEE-1 points while cutting peak GPU memory by 48%."
+    },
+    {
+      "question": "What future improvements do the SciLongFormer authors suggest?",
+      "is_answerable": true,
+      "abstained": false,
+      "retrieval_status": "moderate_evidence",
+      "max_similarity_score": 0.5585,
+      "citation_correct": true,
+      "answer_token_f1": 1.0,
+      "key_term_recall": 1.0,
+      "generated_answer": "multimodal figure-table parsing and INT8 ONNX quantization for laptop CPUs"
+    },
+    {
+      "question": "What embeddings and retrieval components does CiteGuardRAG use?",
+      "is_answerable": true,
+      "abstained": false,
+      "retrieval_status": "moderate_evidence",
+      "max_similarity_score": 0.5628,
+      "citation_correct": true,
+      "answer_token_f1": 0.5556,
+      "key_term_recall": 0.3333,
+      "generated_answer": "all-MiniLM-L6-v2 embeddings"
+    },
+    {
+      "question": "What are the limitations of CiteGuardRAG?",
+      "is_answerable": true,
+      "abstained": false,
+      "retrieval_status": "moderate_evidence",
+      "max_similarity_score": 0.5585,
+      "citation_correct": true,
+      "answer_token_f1": 1.0,
+      "key_term_recall": 1.0,
+      "generated_answer": "CiteGuardRAG cannot process password-protected or image-only scanned PDFs without an external OCR engine."
+    },
+    {
+      "question": "What is the traditional recipe for Neapolitan margherita pizza dough?",
+      "is_answerable": false,
+      "abstained": true,
+      "retrieval_status": "insufficient_evidence",
+      "max_similarity_score": 0.1387
+    },
+    {
+      "question": "Which football team won the 2022 FIFA World Cup final?",
+      "is_answerable": false,
+      "abstained": true,
+      "retrieval_status": "insufficient_evidence",
+      "max_similarity_score": 0.095
+    }
+  ]
+}

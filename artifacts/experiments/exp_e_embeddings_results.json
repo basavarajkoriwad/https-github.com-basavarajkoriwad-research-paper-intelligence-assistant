@@ -1,0 +1,116 @@
+{
+  "experiment": "Experiment E: Embedding Comparison for Scientific Retrieval",
+  "seed": 42,
+  "bert_model": "allenai/scibert_scivocab_uncased",
+  "sentence_transformer_model": "BAAI/bge-small-en-v1.5",
+  "arxiv_title_to_abstract": [
+    {
+      "model": "TF-IDF (1-2 gram)",
+      "embedding_dim": 17547,
+      "num_queries": 84,
+      "corpus_size": 84,
+      "recall_at_1": 1.0,
+      "recall_at_5": 1.0,
+      "recall_at_10": 1.0,
+      "mrr_at_10": 1.0,
+      "ndcg_at_10": 1.0,
+      "corpus_encode_seconds": 0.08,
+      "query_latency_ms": 0.172
+    },
+    {
+      "model": "BERT (scibert_scivocab_uncased, cls)",
+      "embedding_dim": 768,
+      "num_queries": 84,
+      "corpus_size": 84,
+      "recall_at_1": 0.0714,
+      "recall_at_5": 0.25,
+      "recall_at_10": 0.381,
+      "mrr_at_10": 0.1435,
+      "ndcg_at_10": 0.1985,
+      "corpus_encode_seconds": 30.819,
+      "query_latency_ms": 42.443
+    },
+    {
+      "model": "BERT (scibert_scivocab_uncased, mean)",
+      "embedding_dim": 768,
+      "num_queries": 84,
+      "corpus_size": 84,
+      "recall_at_1": 0.4881,
+      "recall_at_5": 0.7857,
+      "recall_at_10": 0.8929,
+      "mrr_at_10": 0.6105,
+      "ndcg_at_10": 0.678,
+      "corpus_encode_seconds": 30.674,
+      "query_latency_ms": 43.129
+    },
+    {
+      "model": "SentenceTransformer (bge-small-en-v1.5)",
+      "embedding_dim": 384,
+      "num_queries": 84,
+      "corpus_size": 84,
+      "recall_at_1": 1.0,
+      "recall_at_5": 1.0,
+      "recall_at_10": 1.0,
+      "mrr_at_10": 1.0,
+      "ndcg_at_10": 1.0,
+      "corpus_encode_seconds": 16.283,
+      "query_latency_ms": 16.413
+    }
+  ],
+  "sciq_question_to_support": [
+    {
+      "model": "TF-IDF (1-2 gram)",
+      "embedding_dim": 8180,
+      "num_queries": 87,
+      "corpus_size": 87,
+      "recall_at_1": 0.9655,
+      "recall_at_5": 0.9885,
+      "recall_at_10": 0.9885,
+      "mrr_at_10": 0.977,
+      "ndcg_at_10": 0.98,
+      "corpus_encode_seconds": 0.027,
+      "query_latency_ms": 0.073
+    },
+    {
+      "model": "BERT (scibert_scivocab_uncased, cls)",
+      "embedding_dim": 768,
+      "num_queries": 87,
+      "corpus_size": 87,
+      "recall_at_1": 0.1379,
+      "recall_at_5": 0.3103,
+      "recall_at_10": 0.5057,
+      "mrr_at_10": 0.2279,
+      "ndcg_at_10": 0.2919,
+      "corpus_encode_seconds": 30.717,
+      "query_latency_ms": 46.765
+    },
+    {
+      "model": "BERT (scibert_scivocab_uncased, mean)",
+      "embedding_dim": 768,
+      "num_queries": 87,
+      "corpus_size": 87,
+      "recall_at_1": 0.5517,
+      "recall_at_5": 0.7931,
+      "recall_at_10": 0.8506,
+      "mrr_at_10": 0.6434,
+      "ndcg_at_10": 0.6934,
+      "corpus_encode_seconds": 30.353,
+      "query_latency_ms": 48.75
+    },
+    {
+      "model": "SentenceTransformer (bge-small-en-v1.5)",
+      "embedding_dim": 384,
+      "num_queries": 87,
+      "corpus_size": 87,
+      "recall_at_1": 0.9655,
+      "recall_at_5": 0.9885,
+      "recall_at_10": 0.9885,
+      "mrr_at_10": 0.9741,
+      "ndcg_at_10": 0.9777,
+      "corpus_encode_seconds": 10.232,
+      "query_latency_ms": 17.986
+    }
+  ],
+  "checkpoint_path": "artifacts/checkpoints/exp_e_embeddings/scientific_embeddings_checkpoint.npz",
+  "comparison_plot": "data/reports/plots/exp_e_embeddings_comparison.png"
+}

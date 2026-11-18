@@ -1,0 +1,75 @@
+{
+  "experiment": "Experiment D: T5 Scientific Paper Summarization",
+  "dataset": "arxiv_summarization",
+  "model_name": "google/flan-t5-small",
+  "seed": 42,
+  "split_sizes": {
+    "train": 48,
+    "val": 16,
+    "test": 16
+  },
+  "lead3_baseline_rouge": {
+    "rouge1": 0.2814,
+    "rouge2": 0.082,
+    "rougeL": 0.1815
+  },
+  "pretrained_t5_rouge": {
+    "rouge1": 0.1004,
+    "rouge2": 0.0243,
+    "rougeL": 0.0733
+  },
+  "hierarchical_map_reduce_rouge": {
+    "num_papers": 6,
+    "rouge1": 0.0781,
+    "rouge2": 0.0143,
+    "rougeL": 0.061
+  },
+  "finetuned_t5_rouge": {
+    "rouge1": 0.2574,
+    "rouge2": 0.0663,
+    "rougeL": 0.1623
+  },
+  "finetuning": {
+    "model_name": "google/flan-t5-small",
+    "device": "cpu",
+    "total_parameters": 76961152,
+    "trainable_parameters": 76961152,
+    "pretrained_val_loss": 3.321,
+    "best_val_loss": 3.085,
+    "best_epoch": 3,
+    "train_seconds": 248.69,
+    "checkpoint_path": "artifacts/checkpoints/exp_d_t5/best_model.pt",
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 3.5453,
+        "val_loss": 3.1375
+      },
+      {
+        "epoch": 2,
+        "train_loss": 3.3549,
+        "val_loss": 3.1002
+      },
+      {
+        "epoch": 3,
+        "train_loss": 3.2749,
+        "val_loss": 3.085
+      }
+    ]
+  },
+  "sample_summaries": [
+    {
+      "paper_id": "arxiv_summ_test_0",
+      "reference_abstract": "the short - term periodicities of the daily sunspot area fluctuations from august 1923 to october 1933 are discussed . for these data\nthe correlative analysis indicates negative correlation for the periodicity of about [MATH] days , but the power spectrum analysis indicates a statistically significant peak in this time interval .\na new method of th",
+      "pretrained_summary": "the existence of the periodicity of about [MATH] days of the time series of sunspot area fluctuations and sunspark area fluctuations from the northern hemisphere during the maximum activity period is questionable",
+      "finetuned_summary": "the short - term periodicities of the various indices of solar activity have been considered extensively . the periodicities about 155 days and from the interval of [MATH] $ ] days are mentioned most often . this periodicity is always characteristic for one of the solar hemispheres , the southern hemissphere for cycles 1215 and the northern hemies for cycles 1621 , and the second is caused by statistically significant positive values of the autocorrelation function . a"
+    },
+    {
+      "paper_id": "arxiv_summ_test_1",
+      "reference_abstract": "we study the detectability of circular polarization in a stochastic gravitational wave background from various sources such as supermassive black hole binaries , cosmic strings , and inflation in the early universe with pulsar timing arrays .\nwe calculate generalized overlap reduction functions for the circularly polarized stochastic gravitational ",
+      "pretrained_summary": "ptas isotropic and unpolarized [CITE] , astrophysical origin and cosmological origin in the early universe .",
+      "finetuned_summary": "the first direct detection of gravitational waves ( gws ) will bring the era of astronomy . the interferometer detectors are now under operation and awaiting the first signal . pulsar timing arrays can be used as a detector for gwes [CITE] , where the lower limit of the observable frequencies is determined by the inverse of total observation time [MATH] . thus , the total observatory time has a crucial role in"
+    }
+  ],
+  "loss_curve_plot": "data/reports/plots/exp_d_t5_curves.png"
+}
